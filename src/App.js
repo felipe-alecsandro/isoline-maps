@@ -116,22 +116,22 @@ class App extends React.Component {
       maxIsolineRangeLookup.time;
 
     const sliderVal = this.state.options.range > max ? max : this.state.options.range;
-
+    const map = this.state.maps[0]
     return (
       <div className="app">
 
-        <div className="map-grid">
-          {this.state.maps.map((map, index) =>
-            <MapContainer
-              key={index}
-              index={index}
-              center={map.coordinates}
-              options={this.state.options}
-              handleDrag={this.handleDrag}
-              polygon={map.polygon}
-              style={this.state.options.style}
-            />
-          )}
+        <div className="map-full">
+          {/* {this.state.maps.map((map, index) => */}
+          <MapContainer
+            key={0}
+            index={0}
+            center={map.coordinates}
+            options={this.state.options}
+            handleDrag={this.handleDrag}
+            polygon={map.polygon}
+            style={this.state.options.style}
+          />
+          {/* )} */}
 
         </div>
       </div>
